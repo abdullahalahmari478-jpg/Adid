@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>try{var t=localStorage.getItem("adid-theme");if(!t&&matchMedia("(prefers-color-scheme: dark)").matches)t="dark";if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<title>Ādid | Livestock Investment</title>
+<meta name="description" content="Your local agent in the Saudi market: we bring your veterinary medicines, supplements and feed products into the market and manage everything from inside.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Readex+Pro:wght@500;600&display=swap">
+<style>
+:root{
+  --ink:#1E2A3A; --ink-soft:#3C4A5F; --muted:#4A5668;
+  --navy:#0E1B3D; --navy-2:#16264F; --navy-line:#2B3D6E;
+  --blue:#2347D8; --blue-deep:#16309E; --blue-soft:#E8EEFF; --hero:#EAF1FF;
+  --teal:#0FB5BA; --teal-bright:#19D3D8; --teal-soft:#DDF6F6; --teal-deep:#075F63;
+  --slate:#4F6280; --slate-soft:#E9EDF3; --slate-deep:#2F3E55;
+  --bg-alt:#F4F8FD; --line:#E1E8F0; --white:#FFFFFF; --logo-bg:#F7F7F7;  --bg:#FFFFFF; --surface:#FFFFFF; --head:#0E1B3D; --accent:#16309E; --teal-text:#075F63; --slate-text:#2F3E55;
+  --chip-line:var(--chip-line); --tab-hover:#B8C7E6; --supp-bg:#F1FAFA; --feed-bg:#F4F6F9; --devbar:#EAF0F7; --devbar-line:#DCE5EF;
+  color-scheme:light;
+}
+html[data-theme="dark"]{
+  --ink:#E3E9F5; --ink-soft:#B8C4DA; --muted:#9AA8C2; --bg:#0A1226; --surface:#111C38; --head:#F1F5FF;
+  --navy:#0B1636; --navy-2:#14234D; --navy-line:#2B3D6E; --hero:#0F1A38; --bg-alt:#0D1730; --line:#24335A; --logo-bg:#0C1430;
+  --blue-soft:#1B2B5E; --teal-soft:#0F3A40; --slate-soft:#222E47; --accent:#9DB4FF; --teal-text:#5FE0E4; --slate-text:#B8C6DD;
+  --chip-line:#2B3D6E; --tab-hover:#3A4F86; --supp-bg:#0E2A33; --feed-bg:#17223A; --devbar:#0D1630; --devbar-line:#1E2C52;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);transition:background .2s,color .2s;color:var(--ink);font-family:'IBM Plex Sans Arabic','Segoe UI',Tahoma,sans-serif;font-size:16px;line-height:1.75}
+[hidden]{display:none!important}
+a{color:var(--blue);text-decoration:none}
+a:hover{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+button{font-family:inherit;font-size:inherit}
+h1,h2,h3,h4,p,ul{margin:0}
+h1,h2,h3.panel-title{font-family:'Readex Pro','IBM Plex Sans Arabic',sans-serif;font-weight:600}
+.wrap{max-width:1200px;margin:0 auto;padding-inline:24px}
+
+/* شريط حساب المطور */
+.devbar{background:var(--devbar);border-bottom:1px solid var(--devbar-line)}
+.devbar .wrap{padding-block:6px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;font-size:12.5px}
+.devbar .tag{color:var(--muted)}
+.dev-link{display:inline-flex;align-items:center;gap:8px;color:var(--ink);padding:2px 4px}
+.dev-link:hover{color:var(--accent)}
+
+.dev-link .lbl{color:var(--muted)}
+.dev-link b{font-weight:600}
+.ltr{direction:ltr;unicode-bidi:isolate;display:inline-block}
+
+/* الهيدر */
+header.top{background:var(--logo-bg);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+header.top .wrap{padding-block:10px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px}
+.logo img{height:46px;width:auto;display:block}
+nav.main{display:flex;flex-wrap:wrap;align-items:center;gap:6px 22px;font-size:15px;font-weight:500}
+nav.main a{color:var(--ink);padding:6px 2px}
+nav.main a:hover{color:var(--accent)}
+nav.main a.cta{color:#fff;background:var(--blue);padding:6px 18px;border-radius:999px}
+nav.main a.cta:hover{background:var(--blue-deep);color:#fff}
+
+/* الواجهة */
+.hero{background:var(--hero)}
+.hero .wrap{padding-block:72px;display:flex;flex-wrap:wrap;align-items:center;gap:48px}
+.hero-text{flex:1 1 480px;min-width:0;display:flex;flex-direction:column;gap:22px}
+.badge{align-self:flex-start;font-size:13.5px;font-weight:600;color:var(--accent);background:var(--surface);border:1px solid var(--chip-line);padding:4px 14px;border-radius:999px}
+.hero h1{font-size:46px;line-height:1.35;color:var(--head);text-wrap:balance}
+.hero p.lead{font-size:18px;color:var(--ink-soft);max-width:580px}
+.btns{display:flex;flex-wrap:wrap;gap:12px;padding-top:6px}
+.btn{display:inline-block;font-weight:600;padding:13px 28px;border-radius:12px}
+.btn.primary{background:var(--blue);color:#fff}
+.btn.primary:hover{background:var(--blue-deep);color:#fff}
+.btn.ghost{background:var(--surface);color:var(--accent);border:1.5px solid var(--blue);padding:12px 28px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding-top:10px}
+.chips span{font-size:14px;background:var(--surface);border:1px solid var(--chip-line);padding:3px 14px;border-radius:999px}
+.art{flex:1 1 340px;min-width:0;max-width:460px;margin:0 auto;aspect-ratio:1/1;position:relative}
+.art .pill{position:absolute;border-radius:999px;transform:rotate(28deg)}
+.art .p1{top:6%;right:8%;width:46%;height:78%;background:linear-gradient(160deg,#0B2EB8,#3D6BFF)}
+.art .p2{bottom:4%;left:6%;width:44%;height:70%;background:linear-gradient(160deg,#19D3D8,#0FB5BA);opacity:.92}
+.art .card{position:absolute;top:36%;left:2%;right:2%;background:var(--surface);border-radius:18px;padding:16px 20px;box-shadow:0 14px 40px rgba(14,27,61,.14);display:flex;flex-direction:column;gap:10px}
+.art .card div{display:flex;align-items:center;gap:10px;font-weight:600;font-size:15px}
+.art .card i{width:10px;height:10px;border-radius:50%;display:block}
+
+/* الأقسام العامة */
+section{scroll-margin-top:80px}
+.sec-pad{padding-block:72px}
+.sec-head{max-width:700px;display:flex;flex-direction:column;gap:10px}
+.sec-head h2{font-size:32px;line-height:1.4;color:var(--head)}
+.sec-head p{color:var(--muted);font-size:17px}
+.stack{display:flex;flex-direction:column;gap:36px}
+.grid{display:flex;flex-wrap:wrap;gap:20px}
+.grid>*{flex:1 1 240px;min-width:0}
+
+/* خدماتنا */
+.services{background:var(--bg)}
+.services .wrap{padding-block:56px}
+.svc-panel{background:var(--navy);border-radius:28px;padding:48px 40px;display:flex;flex-direction:column;gap:32px}
+.svc-panel h2{font-size:32px;line-height:1.4;color:#fff}
+.svc-panel .sub{color:#D5DEEF;font-size:17px;max-width:720px;margin-top:10px}
+.svc-grid{display:flex;flex-wrap:wrap;gap:16px}
+.svc{flex:1 1 300px;min-width:0;background:var(--navy-2);border:1px solid var(--navy-line);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:6px}
+.svc .n{font-size:14px;font-weight:600;color:var(--teal-bright)}
+.svc h3{font-size:18px;color:#fff}
+.svc p{color:#D5DEEF;font-size:15.5px}
+.svc-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;border-top:1px solid var(--navy-line);padding-top:24px}
+.svc-foot span{color:#fff;font-size:17px;font-weight:500}
+.svc-foot a{background:var(--teal-bright);color:#0E1B3D;font-weight:600;padding:12px 28px;border-radius:12px}
+.svc-foot a:hover{background:#fff;color:#0E1B3D}
+
+/* لماذا السعودية */
+.why-card{background:var(--bg-alt);border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:8px}
+.why-card h3{font-size:18px;color:var(--accent)}
+.why-card p{color:var(--ink-soft);font-size:15.5px}
+
+/* النوافذ الثلاث */
+.tabs-sec{background:var(--bg-alt);border-block:1px solid var(--line)}
+.tabs{display:flex;flex-wrap:wrap;gap:16px}
+.tab{flex:1 1 280px;min-width:0;text-align:start;cursor:pointer;background:var(--surface);border:2px solid var(--line);border-radius:16px;padding:20px 22px;display:flex;align-items:center;gap:16px;color:var(--ink)}
+.tab:hover{border-color:var(--tab-hover)}
+.tab[aria-selected="true"]{border-color:var(--blue);box-shadow:0 8px 24px rgba(35,71,216,.12)}
+.tab .ico{flex:none;width:48px;height:48px;border-radius:14px;color:#fff;display:flex;align-items:center;justify-content:center}
+.tab .t{display:flex;flex-direction:column;min-width:0}
+.tab .t b{font-weight:600;font-size:18px;color:var(--head)}
+.tab .t small{font-size:14px;color:var(--muted)}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:36px;display:flex;flex-wrap:wrap;gap:36px}
+.panel-main{flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:18px}
+.panel-title{font-size:26px;color:var(--head)}
+.panel-main p{color:var(--ink-soft)}
+.tags{display:flex;flex-wrap:wrap;gap:10px}
+.tags span{padding:6px 16px;border-radius:999px;font-size:15px}
+.opp{flex:1 1 320px;min-width:0;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:12px}
+.opp h4{font-size:17px}
+.opp ul{padding-inline-start:20px;display:flex;flex-direction:column;gap:8px;color:var(--ink-soft);font-size:15.5px}
+.meds .tags span{background:var(--blue-soft);color:var(--accent)}
+.meds .opp{background:var(--bg-alt)} .meds .opp h4{color:var(--accent)}
+.supp .tags span{background:var(--teal-soft);color:var(--teal-text)}
+.supp .opp{background:var(--supp-bg)} .supp .opp h4{color:var(--teal-text)}
+.feed .tags span{background:var(--slate-soft);color:var(--slate-text)}
+.feed .opp{background:var(--feed-bg)} .feed .opp h4{color:var(--slate-text)}
+
+/* الشراكة */
+.partners .wrap{padding-block:72px;display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start}
+.partners .sec-head{flex:1 1 340px;min-width:0}
+.partners .cards{flex:2 1 520px;min-width:0;display:flex;flex-wrap:wrap;gap:16px}
+.pcard{flex:1 1 220px;min-width:0;border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:6px}
+.pcard h3{font-size:18px;color:var(--accent)}
+.pcard p{color:var(--ink-soft);font-size:15.5px}
+
+/* التواصل */
+.contact{background:var(--navy);color:#fff}
+.contact .wrap{padding-block:72px;display:flex;flex-wrap:wrap;gap:40px;align-items:center}
+.contact .txt{flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:14px}
+.contact h2{font-size:32px;line-height:1.4;color:#fff}
+.contact p{color:#D5DEEF;font-size:17px}
+.contact .boxes{flex:1 1 360px;min-width:0;display:flex;flex-direction:column;gap:14px}
+.cbox{background:var(--navy-2);border:1px solid var(--navy-line);border-radius:16px;padding:20px 24px;display:flex;flex-direction:column;gap:2px}
+.cbox small{font-size:14px;color:#B9C7E3}
+.cbox a{color:#fff;font-size:18px;font-weight:600;text-align:start}
+.cbox a:hover{color:var(--teal-bright)}
+
+footer.bottom{background:var(--logo-bg);border-top:1px solid var(--line)}
+footer.bottom .wrap{padding-block:20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;font-size:13.5px;color:var(--muted)}
+footer.bottom a{color:var(--accent);font-weight:500}
+
+
+html[lang="en"] body{font-family:'IBM Plex Sans','IBM Plex Sans Arabic','Segoe UI',Tahoma,sans-serif}
+html[lang="en"] h1,html[lang="en"] h2,html[lang="en"] h3.panel-title{font-family:'Readex Pro','IBM Plex Sans',sans-serif}
+.dev-link .li{flex:none;display:block}
+.dev-link .lbl{color:var(--muted)}
+.logo img{border-radius:8px}
+.tools{display:flex;align-items:center;gap:8px}
+.tbtn{cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;height:36px;min-width:36px;padding:0 14px;border-radius:999px;border:1.5px solid var(--chip-line);background:var(--surface);color:var(--ink);font-weight:600;font-size:14px;line-height:1}
+.tbtn.icon{padding:0;width:36px}
+.tbtn:hover{border-color:var(--blue);color:var(--accent)}
+.i-sun{display:none}
+html[data-theme="dark"] .i-sun{display:block}
+html[data-theme="dark"] .i-moon{display:none}
+html[data-theme="dark"] .svc-panel{border:1px solid var(--navy-line)}
+html[data-theme="dark"] .contact{border-top:1px solid var(--navy-line)}
+html[data-theme="dark"] .btn.primary,html[data-theme="dark"] nav.main a.cta{background:#3A5CF0}
+@media (max-width:640px){
+  .hero h1{font-size:34px}
+  .hero .wrap,.sec-pad,.partners .wrap,.contact .wrap{padding-block:48px}
+  .svc-panel{padding:32px 20px;border-radius:22px}
+  .panel{padding:24px}
+  .sec-head h2,.svc-panel h2,.contact h2{font-size:26px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body id="top">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="li" viewBox="0 0 24 24"><path fill="#0A66C2" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></symbol></svg>
+
+<!-- حساب المطور: أعلى الصفحة يسار -->
+<div class="devbar">
+  <div class="wrap">
+    <span class="tag" data-ar="منصة الاستثمار في الثروة الحيوانية، المملكة العربية السعودية">Livestock investment platform, Saudi Arabia</span>
+    <a class="dev-link" href="https://www.linkedin.com/in/abdullah-alahmari-76046b27a/" target="_blank" rel="noopener" aria-label="Developer account on LinkedIn" data-ar-label="حساب المطور على لينكدإن"><svg class="li" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><use href="#li"/></svg><span class="lbl" data-ar="حساب المطور">Developer account</span></a>
+  </div>
+</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Ādid home" data-ar-label="Ādid الرئيسية"><img src="data:image/jpeg;base64,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" alt="Ādid"></a>
+    <nav class="main" aria-label="Main navigation" data-ar-label="التنقل الرئيسي">
+      <a href="#services" data-ar="خدماتنا">Our services</a>
+      <a href="#why" data-ar="لماذا السعودية">Why Saudi Arabia</a>
+      <a href="#sections" data-tab="meds" data-ar="الأدوية البيطرية">Veterinary medicines</a>
+      <a href="#sections" data-tab="supp" data-ar="المكملات والفيتامينات">Supplements & vitamins</a>
+      <a href="#sections" data-tab="feed" data-ar="الأعلاف والإضافات">Feed & additives</a>
+      <a class="cta" href="#contact" data-ar="تواصل معنا">Contact us</a>
+    </nav>
+    <div class="tools">
+      <button class="tbtn" id="langBtn" type="button"><span id="langTxt" lang="ar">العربية</span></button>
+      <button class="tbtn icon" id="themeBtn" type="button">
+        <svg class="i-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="i-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-text">
+      <span class="badge" data-ar="وكيلك المحلي في السوق السعودي">Your local agent in the Saudi market</span>
+      <h1 data-ar="ندخل منتجاتك إلى السوق السعودي، وندير كل شيء من الداخل">We bring your products into the Saudi market and run everything from inside</h1>
+      <p class="lead" data-ar="نعمل وكيلاً وشريكاً لمصانع الأدوية البيطرية والمكملات والأعلاف، ونخدمك كمستثمر من أول خطوة: التسجيل والاستيراد ثم التوزيع والمبيعات، بفريق واحد وإدارة داخلية كاملة، لتتفرغ أنت للتصنيع والتطوير.">We act as agent and partner for manufacturers of veterinary medicines, supplements and feed, and serve you as an investor from the very first step: registration and import, then distribution and sales, with one team and full in-house management, so you can focus on manufacturing and development.</p>
+      <div class="btns">
+        <a class="btn primary" href="#services" data-ar="اعرف خدماتنا">Explore our services</a>
+        <a class="btn ghost" href="#contact" data-ar="تواصل معنا">Contact us</a>
+      </div>
+      <div class="chips">
+        <span data-ar="الإبل">Camels</span><span data-ar="الأغنام والماعز">Sheep & goats</span><span data-ar="الأبقار">Cattle</span><span data-ar="الدواجن">Poultry</span><span data-ar="الخيل">Horses</span>
+      </div>
+    </div>
+    <div class="art" aria-hidden="true">
+      <div class="pill p1"></div>
+      <div class="pill p2"></div>
+      <div class="card">
+        <div><i style="background:#2347D8"></i><span data-ar="أدوية بيطرية">Veterinary medicines</span></div>
+        <div><i style="background:#0FB5BA"></i><span data-ar="مكملات وفيتامينات">Supplements & vitamins</span></div>
+        <div><i style="background:#7A8BA6"></i><span data-ar="أعلاف وإضافات علفية">Feed & feed additives</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="svc-panel">
+      <div>
+        <h2 data-ar="جهة واحدة تتولى منتجك من المصنع إلى المزرعة">One partner that takes your product from factory to farm</h2>
+        <p class="sub" data-ar="نعمل لحسابك داخل المملكة ونتولى كل مرحلة بفريقنا مباشرة، دون وسطاء ودون تشتيت بين جهات متعددة.">We work on your behalf inside the Kingdom and handle every stage directly with our own team, with no middlemen and no juggling between multiple parties.</p>
+      </div>
+      <div class="svc-grid">
+        <div class="svc"><span class="n">1</span><h3 data-ar="دراسة السوق والجدوى">Market and feasibility study</h3><p data-ar="نحدد الأنواع الحيوانية والمناطق والفئات الأكثر طلباً لمنتجك قبل أن تبدأ.">We identify the animal types, regions and segments with the highest demand for your product before you begin.</p></div>
+        <div class="svc"><span class="n">2</span><h3 data-ar="التسجيل والتراخيص">Registration and licensing</h3><p data-ar="نجهز ملفات التسجيل لدى الهيئة العامة للغذاء والدواء ونتابعها حتى الاعتماد.">We prepare registration files for the Saudi Food and Drug Authority and follow them through to approval.</p></div>
+        <div class="svc"><span class="n">3</span><h3 data-ar="الاستيراد والتخليص الجمركي">Import and customs clearance</h3><p data-ar="ننسق الشحن والإفراج الجمركي ونحافظ على سلسلة التبريد للمنتجات الحساسة.">We coordinate shipping and customs release, and maintain the cold chain for sensitive products.</p></div>
+        <div class="svc"><span class="n">4</span><h3 data-ar="التخزين والتوزيع">Storage and distribution</h3><p data-ar="نوصل المنتج إلى الموزعين والمزارع والعيادات البيطرية في مختلف المناطق.">We deliver the product to distributors, farms and veterinary clinics across all regions.</p></div>
+        <div class="svc"><span class="n">5</span><h3 data-ar="التسويق والمبيعات">Marketing and sales</h3><p data-ar="فريق مبيعات وتسويق يعرّف السوق بعلامتك ويبني علاقتك مع العملاء.">A sales and marketing team that introduces your brand to the market and builds your relationships with customers.</p></div>
+        <div class="svc"><span class="n">6</span><h3 data-ar="الدعم وبلاغات السلامة">Support and safety reports</h3><p data-ar="نستقبل بلاغات الآثار الجانبية وجودة المنتج ونرفعها إليك والجهات المعنية.">We receive reports of side effects and product quality issues and pass them on to you and the relevant authorities.</p></div>
+      </div>
+      <div class="svc-foot">
+        <span data-ar="إدارة وعمل داخلي كامل، من أول ملف تسجيل إلى آخر عبوة تُباع.">Complete in-house management and operations, from the first registration file to the last unit sold.</span>
+        <a href="#contact" data-ar="ابدأ شراكتك معنا">Start your partnership with us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap sec-pad stack">
+    <div class="sec-head">
+      <h2 data-ar="لماذا السوق السعودي">Why the Saudi market</h2>
+      <p data-ar="قطاع الثروة الحيوانية في المملكة يجمع الطلب المحلي والدعم الحكومي والموقع الجغرافي في مكان واحد.">The Kingdom's livestock sector brings local demand, government support and strategic location together in one place.</p>
+    </div>
+    <div class="grid">
+      <div class="why-card"><h3 data-ar="الأمن الغذائي">Food security</h3><p data-ar="إنتاج اللحوم والألبان والبيض أولوية وطنية ضمن رؤية 2030، وصحة القطيع هي أساس هذا الإنتاج.">Producing meat, dairy and eggs is a national priority under Vision 2030, and herd health is the foundation of that production.</p></div>
+      <div class="why-card"><h3 data-ar="طلب مستمر على الدواء والتغذية">Constant demand for medicine and nutrition</h3><p data-ar="الإبل والأغنام والأبقار والدواجن تحتاج برامج علاج ووقاية وتغذية على مدار العام، وليس في مواسم محددة فقط.">Camels, sheep, cattle and poultry need treatment, prevention and nutrition programs all year round, not only in specific seasons.</p></div>
+      <div class="why-card"><h3 data-ar="تنظيم واضح للمنتجات">Clear product regulation</h3><p data-ar="الهيئة العامة للغذاء والدواء تسجّل المستحضرات البيطرية، ووزارة البيئة والمياه والزراعة تشرف على قطاع الثروة الحيوانية.">The Saudi Food and Drug Authority registers veterinary products, and the Ministry of Environment, Water and Agriculture oversees the livestock sector.</p></div>
+      <div class="why-card"><h3 data-ar="موقع يخدم المنطقة">A location that serves the region</h3><p data-ar="منفذ لوجستي يربط الخليج وأفريقيا وآسيا، يناسب مصانع تبحث عن قاعدة تصنيع وتوزيع إقليمية.">A logistics gateway linking the Gulf, Africa and Asia, suited to manufacturers looking for a regional production and distribution base.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="tabs-sec" id="sections">
+  <div class="wrap sec-pad stack" style="gap:32px">
+    <div class="sec-head">
+      <h2 data-ar="ثلاثة مجالات للاستثمار">Three investment areas</h2>
+      <p data-ar="اختر المجال لتعرف الفئات المطلوبة في السوق وأين تتركز الفرص.">Choose an area to see which categories are in demand and where the opportunities are concentrated.</p>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Platform sections" data-ar-label="أقسام المنصة">
+      <button class="tab" role="tab" id="tab-meds" aria-controls="panel-meds" aria-selected="true" data-tab="meds">
+        <span class="ico" style="background:#2347D8" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="8" rx="4" transform="rotate(-35 12 12)"/><path d="M9.2 6.4l5.6 8"/></svg>
+        </span>
+        <span class="t"><b data-ar="الأدوية البيطرية">Veterinary medicines</b><small data-ar="علاج ووقاية ولقاحات">Treatment, prevention and vaccines</small></span>
+      </button>
+      <button class="tab" role="tab" id="tab-supp" aria-controls="panel-supp" aria-selected="false" data-tab="supp">
+        <span class="ico" style="background:#0A8F94" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"/><path d="M10 3v4l-4.5 9a3 3 0 0 0 2.7 4.3h7.6a3 3 0 0 0 2.7-4.3L14 7V3"/><path d="M8 14h8"/></svg>
+        </span>
+        <span class="t"><b data-ar="المكملات والفيتامينات">Supplements & vitamins</b><small data-ar="مناعة وخصوبة وتحمّل الحرارة">Immunity, fertility and heat tolerance</small></span>
+      </button>
+      <button class="tab" role="tab" id="tab-feed" aria-controls="panel-feed" aria-selected="false" data-tab="feed">
+        <span class="ico" style="background:#4F6280" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V9"/><path d="M12 13c-3 0-5-2-5-5 3 0 5 2 5 5z"/><path d="M12 10c0-3 2-5 5-5 0 3-2 5-5 5z"/><path d="M6 21h12"/></svg>
+        </span>
+        <span class="t"><b data-ar="الأعلاف والإضافات العلفية">Feed & feed additives</b><small data-ar="تغذية متكاملة وإضافات">Complete nutrition and additives</small></span>
+      </button>
+    </div>
+
+    <div class="panel meds" role="tabpanel" id="panel-meds" aria-labelledby="tab-meds" data-panel="meds">
+      <div class="panel-main">
+        <h3 class="panel-title" data-ar="الأدوية البيطرية">Veterinary medicines</h3>
+        <p data-ar="سوق يحتاج مستحضرات مسجّلة وموثوقة لعلاج الحيوان والوقاية من الأمراض. الفرصة الأكبر للمصانع القادرة على التسجيل والتوزيع محلياً.">A market that needs registered, reliable products to treat animals and prevent disease. The biggest opportunity is for manufacturers able to register and distribute locally.</p>
+        <div class="tags">
+          <span data-ar="مضادات حيوية ومضادات ميكروبات">Antibiotics and antimicrobials</span><span data-ar="مضادات الطفيليات الداخلية والخارجية">Internal and external antiparasitics</span><span data-ar="اللقاحات والأمصال">Vaccines and sera</span><span data-ar="مضادات الالتهاب ومسكنات الألم">Anti-inflammatories and pain relievers</span><span data-ar="أدوية التناسل والهرمونات">Reproductive and hormonal drugs</span><span data-ar="محاليل وعلاجات مساندة">Solutions and supportive treatments</span>
+        </div>
+      </div>
+      <div class="opp">
+        <h4 data-ar="فرص للمصنّعين والمستثمرين">Opportunities for manufacturers and investors</h4>
+        <ul>
+          <li data-ar="توطين تصنيع المستحضرات الأكثر استهلاكاً بدل الاعتماد على الاستيراد.">Localize manufacturing of the most-consumed products instead of relying on imports.</li>
+          <li data-ar="تسجيل المنتجات لدى الهيئة العامة للغذاء والدواء والدخول إلى قنوات التوزيع.">Register products with the Saudi Food and Drug Authority and enter distribution channels.</li>
+          <li data-ar="منتجات مخصّصة للإبل والأغنام، وهي من أكثر الأنواع حضوراً في المملكة.">Products designed for camels and sheep, among the most prevalent species in the Kingdom.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="panel supp" role="tabpanel" id="panel-supp" aria-labelledby="tab-supp" data-panel="supp" hidden>
+      <div class="panel-main">
+        <h3 class="panel-title" data-ar="المكملات والفيتامينات">Supplements & vitamins</h3>
+        <p data-ar="الحرارة العالية وبرامج التربية المكثفة ترفع حاجة القطعان إلى دعم غذائي ومناعي، وهذا يفتح مجالاً واسعاً للمكملات المتخصصة.">High temperatures and intensive breeding programs raise herds' need for nutritional and immune support, opening a wide field for specialized supplements.</p>
+        <div class="tags">
+          <span data-ar="فيتامينات ومعادن">Vitamins and minerals</span><span data-ar="بروبيوتيك وبريبيوتيك">Probiotics and prebiotics</span><span data-ar="أحماض أمينية">Amino acids</span><span data-ar="مضادات أكسدة وتحمّل الإجهاد الحراري">Antioxidants and heat-stress tolerance</span><span data-ar="دعم المناعة والخصوبة">Immune and fertility support</span><span data-ar="مكملات الإبل والخيل">Camel and horse supplements</span>
+        </div>
+      </div>
+      <div class="opp">
+        <h4 data-ar="فرص للمصنّعين والمستثمرين">Opportunities for manufacturers and investors</h4>
+        <ul>
+          <li data-ar="تركيبات مصمّمة لظروف المناخ الحار في المملكة.">Formulations designed for the Kingdom's hot climate.</li>
+          <li data-ar="مكملات للإبل والخيل، وهي فئة يهتم أصحابها بجودة المنتج أكثر من سعره.">Supplements for camels and horses, a segment whose owners care more about product quality than price.</li>
+          <li data-ar="شراكات مع المزارع الكبرى والعيادات البيطرية لتجربة المنتج وتوزيعه.">Partnerships with large farms and veterinary clinics to trial and distribute the product.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="panel feed" role="tabpanel" id="panel-feed" aria-labelledby="tab-feed" data-panel="feed" hidden>
+      <div class="panel-main">
+        <h3 class="panel-title" data-ar="الأعلاف والإضافات العلفية">Feed & feed additives</h3>
+        <p data-ar="نحوّل فرص الطلب في قطاع الأعلاف بالمملكة إلى وصول سلس وموثوق لمنتجات الإضافات العلفية والتغذوية الداعمة لصحة الحيوان، من خلال منظومة استيراد وتوزيع متكاملة.">We turn demand in the Kingdom's feed sector into smooth, reliable access to feed and nutritional additives that support animal health, through an integrated import and distribution system.</p>
+        <div class="tags">
+          <span data-ar="إضافات علفية وتغذوية">Feed and nutritional additives</span><span data-ar="إنزيمات علفية">Feed enzymes</span><span data-ar="مثبّتات السموم الفطرية">Mycotoxin binders</span><span data-ar="محفزات نمو طبيعية">Natural growth promoters</span><span data-ar="منظمات الحموضة والمواد الرابطة">Acidifiers and binders</span>
+        </div>
+      </div>
+      <div class="opp">
+        <h4 data-ar="فرص للمصنّعين والمستثمرين">Opportunities for manufacturers and investors</h4>
+        <ul>
+          <li data-ar="تسجيل واستيراد سهل للإضافات العلفية المستوردة.">Easy registration and import of imported feed additives.</li>
+          <li data-ar="شبكات توزيع قريبة من مناطق التربية لتقليل كلفة النقل والتخزين.">Distribution networks close to breeding areas to reduce transport and storage costs.</li>
+          <li data-ar="تلبية مباشرة لاحتياجات مربي الإبل والأغنام وفق كل مرحلة إنتاج.">Direct response to the needs of camel and sheep breeders at every production stage.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="partners" id="partners">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-ar="لمصانع الأدوية والمكملات والأعلاف">For medicine, supplement and feed manufacturers</h2>
+      <p data-ar="إن كنت مصنّعاً يبحث عن دخول السوق السعودي أو التوسع فيه، فهذه المسارات المتاحة للتعاون.">If you are a manufacturer looking to enter the Saudi market or expand in it, these are the available paths for cooperation.</p>
+    </div>
+    <div class="cards">
+      <div class="pcard"><h3 data-ar="التصنيع المحلي">Local manufacturing</h3><p data-ar="إقامة خطوط إنتاج أو شراكات تصنيع داخل المملكة.">Setting up production lines or manufacturing partnerships inside the Kingdom.</p></div>
+      <div class="pcard"><h3 data-ar="التوزيع والتسويق">Distribution and marketing</h3><p data-ar="الوصول إلى المزارع والعيادات والموزعين عبر شبكة محلية.">Reaching farms, clinics and distributors through a local network.</p></div>
+      <div class="pcard"><h3 data-ar="تطوير المنتجات">Product development</h3><p data-ar="تعديل التركيبات لتناسب أنواع الحيوان والمناخ المحلي.">Adjusting formulations to suit animal types and the local climate.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="txt">
+      <h2 data-ar="للتواصل أو لبلاغات السلامة">Get in touch or report a safety concern</h2>
+      <p data-ar="للاستثمار والشراكات، أو للإبلاغ عن أثر جانبي أو مشكلة في جودة منتج، راسلنا أو اتصل بنا. عند الإبلاغ اذكر اسم المنتج ورقم التشغيلة والنوع الحيواني.">For investment and partnerships, or to report a side effect or a product quality issue, write to us or call us. When reporting, include the product name, batch number and animal species.</p>
+    </div>
+    <div class="boxes">
+      <div class="cbox"><small data-ar="البريد الإلكتروني">Email</small><a class="ltr" href="mailto:info@adid.com.sa">info@adid.com.sa</a></div>
+      <div class="cbox"><small data-ar="رقم الجوال">Mobile number</small><a class="ltr" href="tel:+966546840146">0546840146</a></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bottom">
+  <div class="wrap">
+    <span data-ar="Ādid، منصة الاستثمار في الثروة الحيوانية">Ādid, livestock investment platform</span>
+    <a class="dev-link foot-dev" href="https://www.linkedin.com/in/abdullah-alahmari-76046b27a/" target="_blank" rel="noopener" aria-label="Developer account on LinkedIn" data-ar-label="حساب المطور على لينكدإن"><svg class="li" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><use href="#li"/></svg><span class="lbl" data-ar="حساب المطور">Developer account</span></a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var tabs = document.querySelectorAll('.tab');
+  var panels = document.querySelectorAll('[data-panel]');
+  function show(id) {
+    tabs.forEach(function (t) { t.setAttribute('aria-selected', t.dataset.tab === id ? 'true' : 'false'); });
+    panels.forEach(function (p) { p.hidden = p.dataset.panel !== id; });
+  }
+  document.querySelectorAll('[data-tab]').forEach(function (el) {
+    el.addEventListener('click', function () { show(el.dataset.tab); });
+  });
+})();
+</script>
+<script>
+(function () {
+  var root = document.documentElement;
+  var T = {
+    en: { title: 'Ādid | Livestock Investment', desc: 'Your local agent in the Saudi market: we bring your veterinary medicines, supplements and feed products into the market and manage everything from inside.', langTxt: 'العربية', langAria: 'Switch language to Arabic', dark: 'Switch to dark mode', light: 'Switch to light mode' },
+    ar: { title: 'Ādid | الاستثمار في الثروة الحيوانية', desc: 'وكيلك المحلي في السوق السعودي: ندخل منتجاتك من الأدوية البيطرية والمكملات والأعلاف إلى السوق وندير كل شيء من الداخل.', langTxt: 'English', langAria: 'التبديل إلى الإنجليزية', dark: 'التبديل إلى الوضع الداكن', light: 'التبديل إلى الوضع الفاتح' }
+  };
+  var texts = document.querySelectorAll('[data-ar]');
+  var labels = document.querySelectorAll('[data-ar-label]');
+  texts.forEach(function (el) { el.dataset.en = el.textContent; });
+  labels.forEach(function (el) { el.dataset.enLabel = el.getAttribute('aria-label'); });
+  var langBtn = document.getElementById('langBtn'), langTxt = document.getElementById('langTxt'), themeBtn = document.getElementById('themeBtn');
+  function store(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  function read(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function setLang(l, save) {
+    var ar = l === 'ar';
+    root.lang = l; root.dir = ar ? 'rtl' : 'ltr';
+    texts.forEach(function (el) { el.textContent = ar ? el.dataset.ar : el.dataset.en; });
+    labels.forEach(function (el) { el.setAttribute('aria-label', ar ? el.dataset.arLabel : el.dataset.enLabel); });
+    document.title = T[l].title;
+    document.querySelector('meta[name="description"]').setAttribute('content', T[l].desc);
+    langTxt.textContent = T[l].langTxt; langTxt.lang = ar ? 'en' : 'ar';
+    langBtn.setAttribute('aria-label', T[l].langAria);
+    setTheme(root.getAttribute('data-theme') || 'light');
+    if (save) store('adid-lang', l);
+  }
+  function setTheme(t, save) {
+    root.setAttribute('data-theme', t);
+    themeBtn.setAttribute('aria-label', T[root.lang === 'ar' ? 'ar' : 'en'][t === 'dark' ? 'light' : 'dark']);
+    if (save) store('adid-theme', t);
+  }
+  langBtn.addEventListener('click', function () { setLang(root.lang === 'ar' ? 'en' : 'ar', true); });
+  themeBtn.addEventListener('click', function () { setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark', true); });
+  setLang(read('adid-lang') === 'ar' ? 'ar' : 'en', false);
+})();
+</script>
+</body>
+</html>
